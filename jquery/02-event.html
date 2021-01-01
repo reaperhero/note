@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>基础jquery</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <p>如果你点我，我就会消失。</p>
+    <p>点我消失!</p>
+    <p>点我也消失!</p>
+    <p id="p1">鼠标指针进入此处，会看到弹窗。</p>
+    Name: <input type="text" name="fullname"><br> Email: <input type="text" name="email">
+</body>
+
+<script>
+    // 常用事件：click、mouseenter(按下之前）、mousedown(按下)、focus
+    $(document).ready(function() {
+        $("p").click(function() {
+            $(this).hide();
+        });
+    });
+    $(document).ready(function() {
+        $("#p1").mouseenter(function() {
+            alert('您的鼠标移到了 id="p1" 的元素上!');
+        });
+    });
+    $(document).ready(function() {
+        $("#p1").mousedown(function() {
+            alert("鼠标在该段落上按下！");
+        });
+    });
+
+    $(document).ready(function() {
+        $("input").focus(function() { // 获得焦点
+            $(this).css("background-color", "#cccccc");
+        });
+        $("input").blur(function() { // 失去焦点
+            $(this).css("background-color", "#ffffff");
+        });
+    });
+</script>
+
+</html>

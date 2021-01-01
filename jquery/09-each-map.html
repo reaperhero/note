@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>菜鸟教程(runoob.com)</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
+    </script>
+    <script>
+        // jquery中each和map区别
+        // 1、each默认方法就是便利谁返回谁，map默认返回空数组
+        // 2、each不支持在回调函数对遍历的数组进行处理、map可以return修改数组
+        var arr = [1, 3, 4, 7];
+        var obj = {
+            0: 1,
+            1: 3,
+            2: 5,
+            3: 7,
+            4: 9,
+            length: 5
+        };
+        // jquery遍历
+        var res1 = $.map(arr, function(index, value) {
+            console.log(index, value)
+        })
+        $.map(obj, function(index, value) {
+            console.log(index, value)
+            return index + value
+        })
+        var res2 = $.each(obj, function(index, value) {
+            console.log(index, value)
+        })
+        console.log(res1)
+        console.log(res2)
+    </script>
+
+    <script>
+        // 原生js map方法,但是不能遍历obj(伪数组)
+        arr.map(function(value, index, array) { // 遍历的元素 遍历的索引  被遍历的数组
+            console.log(index, value, array)
+        });
+    </script>
+
+</head>
+
+<body>
+
+
+</body>
+
+</html>

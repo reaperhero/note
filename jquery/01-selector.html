@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>基础jquery</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
+    </script>
+    <script>
+        // 选择器：jQuery 选择器基于元素的 id、类、类型、属性、属性值等"查找"（或选择）HTML 元素
+        // 1、元素选择器
+        $(document).ready(function() {
+            $("p").click(function() {
+                $(this).hide();
+            });
+        });
+
+        // 2、#id 选择器
+        $(document).ready(function() {
+            $("button").click(function() {
+                $("#test").hide();
+            });
+        });
+
+        // 3、.class 选择器
+        $(document).ready(function() {
+            $("button").click(function() {
+                $(".test").hide();
+            });
+        });
+    </script>
+    <script>
+        // 4、祖先后代
+        // parent() parents()  parentsUntil()  children()  find()
+        $(document).ready(function() {
+            $("span").parent().css({ //直接父元素
+                "color": "red",
+                "border": "2px solid red"
+            });
+            $("span").parents().css({ // 所有祖先元素
+                "color": "red",
+                "border": "2px solid red"
+            });
+            $("span").parentsUntil("div"); // 介于 <span> 与 <div> 元素之间的所有祖先元素
+            $("div").children("p.1").css({ // 直接子元素
+                "color": "red",
+                "border": "2px solid red"
+            });
+            $("div").find("span"); // 属于 <div> 后代的所有 <span> 元素，"*"
+        });
+    </script>
+
+    <script>
+        // 过滤
+        $(document).ready(function() {
+            $("div p").first().css("background-color", "yellow"); // 首个 <div> 元素内部的第一个 <p> 元素
+            $("div p").last(); // <div> 元素中的最后一个 <p> 元素
+            $("p").eq(0);
+        });
+    </script>
+</head>
+
+<body>
+    <p>如果你点我，我就会消失。</p>
+    <p>继续点我!</p>
+    <p>接着点我!</p>
+    <p id="test">这是另外一个段落</p>
+    <h2 class="test">这是一个标题</h2>
+    <p class="test">这是一个段落。</p>
+</body>
+
+</html>
