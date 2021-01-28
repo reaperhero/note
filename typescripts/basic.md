@@ -1,5 +1,6 @@
 # ts基础
 
+## 基础类型
 - 布尔值
 ```
 let isDone: boolean = false;
@@ -160,4 +161,32 @@ let b9 = 123 // number
 let b10  // any类型
 b10 = 123
 b10 = 'abc'
+```
+
+
+## 接口
+
+TypeScript 的核心原则之一是对值所具有的结构进行类型检查。我们使用接口（Interfaces）来定义对象的类型。接口是对象的状态(属性)和行为(方法)的抽象(描述)
+
+```
+// 定义人的接口
+interface IPerson {
+  readonly id: number  // 只读属性
+  name: string
+  age?: number  // 可选属性
+  sex: string
+  (source: string, subString: string): boolean  // 函数类型
+} 
+
+const person1: IPerson = {
+  id: 1,
+  name: 'tom',
+  age: 20,
+  sex: '男'
+  mySearch (source: string, sub: string): boolean {
+    return source.search(sub) > -1
+  }
+}
+
+console.log(person1('abcd', 'bc'))
 ```

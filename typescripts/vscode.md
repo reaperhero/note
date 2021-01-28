@@ -1,4 +1,8 @@
+# install
 
+
+npm install -g typescript
+tsc -V 
 
 1). 生成配置文件tsconfig.json
     tsc --init
