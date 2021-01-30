@@ -183,10 +183,13 @@ const person1: IPerson = {
   name: 'tom',
   age: 20,
   sex: '男'
-  mySearch (source: string, sub: string): boolean {
+  mySearch(source: string, sub: string): boolean {
     return source.search(sub) > -1
   }
 }
 
 console.log(person1('abcd', 'bc'))
 ```
+
+
+## 
