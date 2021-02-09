@@ -69,8 +69,6 @@ var obj = new Numbers();
 console.log("实例变量: "+obj.num_val)
 ```
 
-
-
 ## 条件语句
 
 ```
@@ -79,7 +77,6 @@ if...else 语句 - 当条件为 true 时执行代码，当条件为 false 时执
 if...else if....else 语句- 使用该语句来选择多个代码块之一来执行
 switch 语句 - 使用该语句来选择多个代码块之一来执行
 ```
-
 
 
 ## 访问控制修饰符
