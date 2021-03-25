@@ -22,7 +22,6 @@ namespace Drawing {
 }
 ```
 
-
 - Triangle.ts
 ```
 namespace Drawing { 
